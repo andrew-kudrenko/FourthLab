@@ -8,7 +8,7 @@ public class LastNameValidator extends AbstractValidator {
     protected List<Pattern> createInitialPatterns() {
         return List.of(
             Pattern.compile("[А-яЁё]+(-[А-яЁё]+)*"),
-            Pattern.compile("\\w+(-\\w+)*")
+            Pattern.compile("[A-z]+(-[A-z]+)*")
         );
     }
 }
