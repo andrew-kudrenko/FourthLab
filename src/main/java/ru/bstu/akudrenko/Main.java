@@ -15,14 +15,14 @@ public class Main {
 
         usersReader.read().forEach(user -> {
             var validationResult = String.format(
-                "First Name: %s, Last Name: %s, Phone: %s, Birth Date: %s",
+                "First Name: %-20s | Last Name: %-40s | Phone: %-35s | Birth Date: %-25s",
                 markValidness(firstNameValidator, user.FirstName()),
                 markValidness(lastNameValidator, user.LastName()),
                 markValidness(phoneValidator, user.Phone()),
                 markValidness(dateValidator, user.BirthDate())
             );
 
-            System.out.println(validationResult + "\n\n");
+            System.out.println(validationResult);
         });
     }
 
@@ -31,6 +31,6 @@ public class Main {
                 ? ConsoleColors.GREEN_BRIGHT + "✔"
                 : ConsoleColors.RED_BRIGHT + "❌";
 
-        return value + " " + adornment + ConsoleColors.RESET;
+        return adornment + ConsoleColors.RESET + " " + value;
     }
 }
